@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Don't Buy Israeli Tech</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .title {
+            font-weight: 900;
+            font-size: 4vw;
+            margin: 0;
+            filter: url(#goo);
+            position: relative;
+            color: #ff0000;
+            text-transform: uppercase;
+        }
+        .drop {
+            font-size: 20vw;
+        }
+
+        .drop {
+            width: .1em; height: .1em;
+            border-radius: 0 100% 100% 100%;
+            background-color: currentColor;
+            position: absolute;
+            top: 72%;
+            animation: drop 3s infinite both;
+
+            &:nth-child(1) {
+                left: 14%;
+            }
+
+            &:nth-child(2) {
+                left: 39%;
+                animation-delay: -.4s;
+            }
+
+            &:nth-child(3) {
+                left: 55%;
+                animation-delay: -1.5s;
+            }
+
+            &:nth-child(4) {
+                left: 82%;
+                animation-delay: -.8s;
+            }
+
+            &:nth-child(5) {
+                left: 95.5%;
+                animation-delay: -1.3s;
+            }
+        }
+
+        @keyframes drop {
+            0% {
+                transform: translateY(0) scaleX(.85) rotate(45deg);
+                animation-timing-function: ease-out;
+            }
+            60% {
+                transform: translateY(120%) scaleX(.85) rotate(45deg);
+                animation-timing-function: ease-in;
+            }
+            80%, 100% {
+                transform: translateY(60vh) scaleX(.85) rotate(45deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="width: 0;height: 0;">
+    <defs>
+        <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+    </defs>
+</svg>
+<div class="blood-drip-container">
+    <h1 class="title">
+        Don't Buy Israeli Tech
+        <span class="drop"></span>
+        <span class="drop"></span>
+        <span class="drop"></span>
+        <span class="drop"></span>
+        <span class="drop"></span>
+    </h1>
+    <p>This website is a response to buyisraelitech.com</p>
+    <p>If you're in a position of choosing tech in your company or project, please consider researching the companies below.</p>
+    <p>They're likely operating from occupied Palestinian land or directly/indirectly support Israeli's army in their genocide against Palestinians.</p>
+    <iframe src="https://buyisraelitech.com/" frameborder="0" style="display: block;height: 100vh; width: 100vw">
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+</div>
+</body>
+</html>
